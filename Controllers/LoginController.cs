@@ -42,5 +42,36 @@ public class LoginController : Controller
     {
         return View("~/Views/Home/Dashboard.cshtml");
     }
+    [HttpPost]
+    public IActionResult RegisterUser(string name, string username, string email, string password)
+    {
+        
+        var existingUser = InMemoryDatabase.Users.FirstOrDefault(u => u.Username == username || u.Email == email);
 
+        if (existingUser != null)
+        {
+            
+            ViewBag.ErrorMessage = "User with the same username or email already exists";
+            return RedirectToAction("Index", "Home");
+        }
+
+        
+        var newUser = new User
+        {
+            Name = name,
+            Username = username,
+            Email = email,
+            Password = password 
+        };
+
+        
+        InMemoryDatabase.Users.Add(newUser);
+
+        
+        return RedirectToAction("Index", "Home");
+    }
+    public IActionResult SecurePage()
+    {
+        return View();
+    }
 }
