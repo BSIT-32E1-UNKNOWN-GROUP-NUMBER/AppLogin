@@ -8,7 +8,7 @@ namespace AppLogin.Services
         {
             return users.FirstOrDefault(u => u.Username == username && u.Password == password);
         }
-
+        
 
         public User? GetUserByUsernameOrEmail(string username, string email)
         {

@@ -23,12 +23,10 @@ public class LoginController : Controller
 
         if (user != null)
         {
-            // Login successful, redirect to home page
             return RedirectToAction("Dashboard", "Home");
         }
         else
         {
-            // Login failed, show an error message
             ViewBag.ErrorMessage = "Invalid username or password";
             return View("~/Views/Home/Index.cshtml");
         }
@@ -37,7 +35,6 @@ public class LoginController : Controller
     [HttpGet]
     public IActionResult Login()
     {
-        // Display the login form
         return View("~/Views/Home/Index.cshtml");
     }
 
