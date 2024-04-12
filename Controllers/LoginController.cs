@@ -32,7 +32,18 @@ public class LoginController : Controller
             ViewBag.ErrorMessage = "Invalid username or password";
             return View("~/Views/Home/Index.cshtml");
         }
+
+    }
+    [HttpGet]
+    public IActionResult Login()
+    {
+        // Display the login form
+        return View("~/Views/Home/Index.cshtml");
     }
 
-    
+    public IActionResult Dashboard()
+    {
+        return View("~/Views/Home/Dashboard.cshtml");
+    }
+
 }
