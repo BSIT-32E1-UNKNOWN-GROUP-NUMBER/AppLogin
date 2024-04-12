@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using AppLogin.Models;
 
-namespace AppLogin.Controllers;
+namespace LoginApp.Controllers;
 
 public class HomeController : Controller
 {
@@ -28,4 +28,10 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+
+    public IActionResult Dashboard()
+    {
+        return View();
+    }
 }
+
