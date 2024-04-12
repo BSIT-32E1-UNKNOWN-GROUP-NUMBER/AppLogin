@@ -15,7 +15,10 @@ namespace AppLogin.Services
             users.Add(user);
             return user;
         }
-
+        public User? GetUserByUsername(string username)
+        {
+            return users.FirstOrDefault(u => u.Username == username);
+        }
         public User? GetUserByUsernameOrEmail(string username, string email)
         {
             return users.FirstOrDefault(u => u.Username == username || u.Email == email);
