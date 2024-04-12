@@ -1,4 +1,4 @@
-namespace LoginApp.Services
+namespace AppLogin.Services
 {
     public class InMemoryUserService : IUserService
     {

@@ -1,4 +1,4 @@
-namespace LoginApp.Services
+namespace AppLogin.Services
 {
     public interface IUserService
     {
