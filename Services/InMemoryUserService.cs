@@ -9,6 +9,12 @@ namespace AppLogin.Services
             return users.FirstOrDefault(u => u.Username == username && u.Password == password);
         }
         
+         public User RegisterUser(string name, string username, string email, string password)
+        {
+            var user = new User { Name = name, Username = username, Email = email, Password = password };
+            users.Add(user);
+            return user;
+        }
 
         public User? GetUserByUsernameOrEmail(string username, string email)
         {
